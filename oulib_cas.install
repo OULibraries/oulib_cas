@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Install file for CAS settings
+ */
+
+/**
+ * Implements hook_install()
+ */
+function oulib_cas_install() {
+  _oulib_cas_setup();
+}
+
+/**
+ * Set default settings for CAS authentication
+ */
+function _oulib_cas_setup() {
+
+  # Make CAS login default on login forms
+  variable_set('cas_login_form', CAS_MAKE_DEFAULT);
+  # Users cannot change email address
+  variable_set('cas_hide_email', 1);
+  # Once per browser session
+  variable_set('cas_check_frequency', CAS_CHECK_ONCE );
+
+  # Point account urls upstream
+  variable_set('cas_changePasswordURL','https://accounts.ou.edu/Account/ForgotPassword');
+  variable_set('cas_registerURL','https://accounts.ou.edu/Account/NewAccountSetup');
+
+  # 
+  variable_set('cas_login_message', 'Logged in as %cas_username.');
+
+}

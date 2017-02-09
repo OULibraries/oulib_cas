@@ -1,0 +1,8 @@
+name = OU Libraries CAS config
+description = Provides basic CAS configuration for OU Libraries
+core = 7.x
+package = Central Authentication Service
+
+dependencies[] = cas:cas
+dependencies[] = cas_roles:cas_roles
+dependencies[] = cas_attributes:cas_attributes
