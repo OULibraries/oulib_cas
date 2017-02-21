@@ -16,6 +16,9 @@ function oulib_cas_install() {
  */
 function _oulib_cas_setup() {
 
+  # Leave blank to load cas from phpinclude path.
+  variable_set('cas_library_dir', ''); 
+
   # Make CAS login default on login forms
   variable_set('cas_login_form', CAS_MAKE_DEFAULT);
   # Users cannot change email address
