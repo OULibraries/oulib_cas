@@ -30,7 +30,11 @@ function _oulib_cas_setup() {
   variable_set('cas_changePasswordURL','https://accounts.ou.edu/Account/ForgotPassword');
   variable_set('cas_registerURL','https://accounts.ou.edu/Account/NewAccountSetup');
 
-  # 
+  # Send logged out users to standard url 
+  $logoutBase = variable_get('cas_server',"");
+  variable_set('cas_logout_destination', logoutBase.'/logout');
+
+  # Neaten login message 
   variable_set('cas_login_message', 'Logged in as %cas_username.');
 
 }
