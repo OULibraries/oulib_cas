@@ -33,4 +33,6 @@ function _oulib_cas_setup() {
   # 
   variable_set('cas_login_message', 'Logged in as %cas_username.');
 
+  # Manually setting Certificate Authority PEM Certificate
+  variable_set('cas_cert', '/etc/pki/tls/cert.pem');
 }
